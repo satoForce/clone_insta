@@ -70,7 +70,7 @@ struct Post2: View {
                     Text("perro1")
                       .fontWeight(.bold)
                     
-                    Text("Hola")
+                    Text("Hola!!!")
                   }
                   .font(.caption)
                   
