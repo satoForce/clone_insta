@@ -28,7 +28,7 @@ struct Post2: View {
               
               Spacer()
               
-              Image(systemName: "ellipsis")
+              Image(systemName: "heart")
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 8)
