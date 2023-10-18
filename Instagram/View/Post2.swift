@@ -96,7 +96,7 @@ struct Post2: View {
                     }
                   }
                 }
-                .frame(width: .infinity)
+//                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 12)
             }
                 
