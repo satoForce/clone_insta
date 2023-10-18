@@ -17,7 +17,7 @@ struct TabB: View {
                     Label("", systemImage: "house")
             }
             
-            Text("buscar")
+            PostGridApi()
                 .tabItem {
                     Label("", systemImage: "magnifyingglass")
             }

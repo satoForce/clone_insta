@@ -20,7 +20,7 @@ struct PostGridApi: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(characters) { character in
-                AsyncImage(url: URL(string: characters.image), content: { image in
+                AsyncImage(url: URL(string: character.image), content: { image in
                     image
                         .resizable()
                         .scaledToFill()
