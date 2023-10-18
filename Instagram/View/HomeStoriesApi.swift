@@ -9,20 +9,27 @@ import SwiftUI
 
 struct HomeStoriesApi: View {
     
-    @State private var characters: [Characters] = [Characters]()
+    @State var characters: Characters
     
-    private var imageSize: CGFloat = 60
-    private var lineWidth: CGFloat = 2.5
-    private var overlayColors: [Color] = [ .blue, .purple, .red, .pink, .yellow, .orange]
+    var imageSize: CGFloat = 60
+    var lineWidth: CGFloat = 2.5
+    var overlayColors: [Color] = [ .blue, .purple, .red, .pink, .yellow, .orange]
     
+//    public init(characters:[Characters]) {
+//      self.characters = characters
+//    }
     
     var body: some View {
         VStack {
           VStack {
-//              Image(characters.first?.image ?? "")
-//              .resizable()
-//              .frame(width: imageSize, height: imageSize)
-//              .cornerRadius(imageSize)
+              AsyncImage(url: URL(string:characters.image), content: { image in
+                  image
+                      .resizable()
+                      .frame(width: imageSize, height: imageSize)
+                      .cornerRadius(imageSize)
+              }, placeholder: {
+                  ProgressView()
+              })
           }
           .overlay(
             Circle()
@@ -32,29 +39,14 @@ struct HomeStoriesApi: View {
           )
           .frame(width: imageSize + 10, height: imageSize + 10)
           
-            Text(characters.first?.name ?? "")
+            Text(characters.name)
             .font(.caption)
         }
-    }
-    
-    private func loadData() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            if let decodedData = try? JSONDecoder().decode(APIData.self, from: data) {
-                DispatchQueue.main.async {
-                    self.characters = decodedData.results
-                    print(characters)
-                }
-            }
-        }.resume()
     }
 }
 
 struct HomeStoriesApi_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStoriesApi()
+        HomeStoriesApi(characters: Characters(id: 1, name: "Jerry Smith", image: "https://rickandmortyapi.com/api/character/avatar/5.jpeg"))
     }
 }

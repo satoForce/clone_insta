@@ -20,7 +20,7 @@ struct ContentView: View {
             
             ScrollView {
                 VStack(alignment: .leading) {
-                    HomeStoriesApi()
+//                    HomeStoriesApi()
                     Divider()
                    
                     ForEach(Data().posts) {
