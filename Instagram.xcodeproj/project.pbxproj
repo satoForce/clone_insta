@@ -13,6 +13,8 @@
 		F46226B72AC707CB00DDFACE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226B62AC707CB00DDFACE /* Post.swift */; };
 		F46226BA2AC7084700DDFACE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226B92AC7084700DDFACE /* Data.swift */; };
 		F46226BC2AC7088000DDFACE /* PostGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226BB2AC7088000DDFACE /* PostGrid.swift */; };
+		F463A3832AE08AB700ED4B37 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463A3822AE08AB700ED4B37 /* ProfileView.swift */; };
+		F463A3852AE08BD300ED4B37 /* PostGridApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463A3842AE08BD300ED4B37 /* PostGridApi.swift */; };
 		F489DCE82AB2A2F20014A77D /* InstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCE72AB2A2F20014A77D /* InstagramApp.swift */; };
 		F489DCEA2AB2A2F20014A77D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489DCE92AB2A2F20014A77D /* ContentView.swift */; };
 		F489DCEC2AB2A2F40014A77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F489DCEB2AB2A2F40014A77D /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		F46226B62AC707CB00DDFACE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F46226B92AC7084700DDFACE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F46226BB2AC7088000DDFACE /* PostGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGrid.swift; sourceTree = "<group>"; };
+		F463A3822AE08AB700ED4B37 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F463A3842AE08BD300ED4B37 /* PostGridApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridApi.swift; sourceTree = "<group>"; };
 		F489DCE42AB2A2F20014A77D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F489DCE72AB2A2F20014A77D /* InstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramApp.swift; sourceTree = "<group>"; };
 		F489DCE92AB2A2F20014A77D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				F489DCE72AB2A2F20014A77D /* InstagramApp.swift */,
-				F489DCE92AB2A2F20014A77D /* ContentView.swift */,
+				F489DD142AB2A7F40014A77D /* TabB.swift */,
 				F46226B82AC7083400DDFACE /* Data */,
 				F4AB22672AC3027300CA957F /* Model */,
 				F4AB22652AC3022100CA957F /* View */,
@@ -171,15 +175,17 @@
 		F4AB22652AC3022100CA957F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F489DCE92AB2A2F20014A77D /* ContentView.swift */,
+				F463A3822AE08AB700ED4B37 /* ProfileView.swift */,
 				F4F8B7902ABC7A3600636F77 /* StoryView.swift */,
 				F4F8B7922ABC7BFB00636F77 /* HomeStories.swift */,
 				F42F37D92ADCB820001B36F7 /* HomeStoriesApi.swift */,
 				F42F37DF2AE03A75001B36F7 /* HomeStoriesCApi.swift */,
 				F489DD1A2AB2ACA30014A77D /* Post2.swift */,
 				F489DD162AB2A8C60014A77D /* Header.swift */,
-				F489DD142AB2A7F40014A77D /* TabB.swift */,
 				F4AB226A2AC3030C00CA957F /* ProfileHeader.swift */,
 				F46226BB2AC7088000DDFACE /* PostGrid.swift */,
+				F463A3842AE08BD300ED4B37 /* PostGridApi.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,11 +335,13 @@
 				F489DD172AB2A8C60014A77D /* Header.swift in Sources */,
 				F4F8B7932ABC7BFB00636F77 /* HomeStories.swift in Sources */,
 				F42F37DA2ADCB820001B36F7 /* HomeStoriesApi.swift in Sources */,
+				F463A3852AE08BD300ED4B37 /* PostGridApi.swift in Sources */,
 				F46226B72AC707CB00DDFACE /* Post.swift in Sources */,
 				F489DCEA2AB2A2F20014A77D /* ContentView.swift in Sources */,
 				F489DD152AB2A7F40014A77D /* TabB.swift in Sources */,
 				F489DCE82AB2A2F20014A77D /* InstagramApp.swift in Sources */,
 				F46226BA2AC7084700DDFACE /* Data.swift in Sources */,
+				F463A3832AE08AB700ED4B37 /* ProfileView.swift in Sources */,
 				F4F8B7912ABC7A3600636F77 /* StoryView.swift in Sources */,
 				F4AB226B2AC3030C00CA957F /* ProfileHeader.swift in Sources */,
 				F46226BC2AC7088000DDFACE /* PostGrid.swift in Sources */,

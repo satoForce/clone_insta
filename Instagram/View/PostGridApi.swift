@@ -1,5 +1,5 @@
 //
-//  HomeStoriesCApi.swift
+//  PostGridApi.swift
 //  Instagram
 //
 //  Created by ROCIO CHAN on 18/10/23.
@@ -7,23 +7,30 @@
 
 import SwiftUI
 
-struct HomeStoriesCApi: View {
+struct PostGridApi: View {
     
     @State private var characters: [Characters] = [Characters]()
     
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
-        
-        ScrollView(.horizontal, showsIndicators: false) {
-            
-            LazyHStack(spacing: 16) {
-                
-                ForEach(characters) { character in
-                    HomeStoriesApi(characters:character)
-                }
+        LazyVGrid(columns: columns) {
+            ForEach(characters) { character in
+                AsyncImage(url: URL(string: characters.image), content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: UIScreen.main.bounds.size.width / 3, height: UIScreen.main.bounds.size.width / 3)
+                        .clipped()
+                }, placeholder: {
+                    ProgressView()
+                })
             }
-            .padding(.horizontal, 8)
         }
-        .padding()
         .onAppear {
             loadData()
         }
@@ -44,8 +51,8 @@ struct HomeStoriesCApi: View {
     }
 }
 
-struct HomeStoriesCApi_Previews: PreviewProvider {
+struct PostGridApi_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStoriesCApi()
+        PostGridApi()
     }
 }

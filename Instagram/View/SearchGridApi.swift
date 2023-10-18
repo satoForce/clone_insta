@@ -1,5 +1,5 @@
 //
-//  HomeStoriesCApi.swift
+//  SearchGridApi.swift
 //  Instagram
 //
 //  Created by ROCIO CHAN on 18/10/23.
@@ -7,23 +7,21 @@
 
 import SwiftUI
 
-struct HomeStoriesCApi: View {
+struct SearchGridApi: View {
     
     @State private var characters: [Characters] = [Characters]()
     
     var body: some View {
-        
-        ScrollView(.horizontal, showsIndicators: false) {
-            
-            LazyHStack(spacing: 16) {
-                
-                ForEach(characters) { character in
-                    HomeStoriesApi(characters:character)
+        ScrollView {
+            LazyVGrid(columns: [
+                GridItem(.adaptive(minimum: 100, maximum: 200), spacing: 16)
+            ], spacing: 16) {
+                ForEach(characters, id: \.self) { character in
+                    AsyncImageView(imageURLString: characters.image)
                 }
             }
-            .padding(.horizontal, 8)
+            .padding(16)
         }
-        .padding()
         .onAppear {
             loadData()
         }
@@ -44,8 +42,8 @@ struct HomeStoriesCApi: View {
     }
 }
 
-struct HomeStoriesCApi_Previews: PreviewProvider {
+struct SearchGridApi_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStoriesCApi()
+        SearchGridApi()
     }
 }

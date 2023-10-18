@@ -9,26 +9,59 @@ import SwiftUI
 
 struct Post2: View {
     
-    let post: Post
+    @State private var characters: [Characters] = [Characters]()
+    
+    var body: some View {
+        LazyVStack {
+            ForEach(characters) { character in
+                PostScroll(characters: character)
+            }
+        }
+        .onAppear {
+            loadData()
+        }
+    }
+    
+    private func loadData() {
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            if let decodedData = try? JSONDecoder().decode(APIData.self, from: data) {
+                DispatchQueue.main.async {
+                    self.characters = decodedData.results
+                }
+            }
+        }.resume()
+    }
+}
+    
+struct PostScroll: View {
+    
+    @State var characters: Characters
     
     var body: some View {
         
         VStack {
             HStack {
-              HStack {
-                Image(post.user.userImage)
-                  .resizable()
-                  .frame(width: 40, height: 40)
-                  .cornerRadius(40)
+                HStack {
+                    AsyncImage(url: URL(string:characters.image), content: { image in
+                        image
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(40)
+                    }, placeholder: {
+                        ProgressView()
+                    })
+                    Text(characters.name)
+                        .font(.caption)
+                        .fontWeight(.bold)
+                }
                 
-                Text(post.user.userName)
-                  .font(.caption)
-                  .fontWeight(.bold)
-              }
-              
-              Spacer()
-              
-              Image(systemName: "heart")
+                Spacer()
+                
+                Image(systemName: "heart")
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 8)
@@ -36,78 +69,87 @@ struct Post2: View {
             VStack(alignment: .leading, spacing: 0) {
                 
                 VStack {
-                    Image(post.postImage)
-                    .resizable()
-                    .frame(width: 300, height: 300)
-                    .aspectRatio(contentMode: .fit)
-                  
-                  HStack {
-                    HStack {
-                      Image(systemName: "heart")
-                      Image(systemName: "message")
-                      Image(systemName: "envelope")
-                    }
-                    Spacer()
+                    AsyncImage(url: URL(string:characters.image), content: { image in
+                        image
+                            .resizable()
+                            .frame(width: 300, height: 300)
+                            .aspectRatio(contentMode: .fit)
+                    }, placeholder: {
+                        ProgressView()
+                    })
                     
-                    Image(systemName: "bookmark")
-                  }
-                  .padding(.horizontal, 12)
-                  .padding(.vertical, 10)
+                    HStack {
+                        HStack {
+                            Image(systemName: "heart")
+                            Image(systemName: "message")
+                            Image(systemName: "envelope")
+                        }
+                        Spacer()
+                        
+                        Image(systemName: "bookmark")
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
                 }
                 
                 VStack(alignment: .leading) {
                     Group {
-                        Text(post.user.userName)
+                        Text(characters.name)
                             .font(Font.system(size: 14, weight: .semibold))
-                            + Text(" ")
-                            + Text(post.caption)
+                        + Text(" ")
+                        + Text("Hola a todos")
                             .font(.footnote)
                     }
                     
-                    Text(post.likes)
-                    .font(.footnote)
-                  HStack(spacing: 6) {
-                    Text("perro1")
-                      .fontWeight(.bold)
-                    
-                    Text("Hola!!!")
-                  }
-                  .font(.caption)
-                  
-                  HStack {
-                    HStack(spacing: 8) {
-                      Image("perro2")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .cornerRadius(50)
-                      
-                      Text("Add comment...")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    Text("Les gusta a franco y 100 más")
+                        .font(.footnote)
+                    HStack(spacing: 6) {
+                        Text("Usuario")
+                            .fontWeight(.bold)
+                        
+                        Text("Hola!!!")
                     }
-                    
-                    Spacer()
+                    .font(.caption)
                     
                     HStack {
-                      Text("😍")
-                      Text("😆")
-                      Image(systemName: "plus.circle")
-                        .foregroundColor(.secondary)
+                        HStack(spacing: 8) {
+                            AsyncImage(url: URL(string:characters.image), content: { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .cornerRadius(50)
+                            }, placeholder: {
+                                ProgressView()
+                            })
+                            
+                            
+                            Text("Add comment...")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Text("😍")
+                            Text("😆")
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.secondary)
+                        }
                     }
-                  }
                 }
-//                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 12)
-            }
-                
             }
             
         }
         
+    }
 }
+
 
 struct Post2_Previews: PreviewProvider {
     static var previews: some View {
-        Post2(post: Data().posts.first!)
+        Post2()
     }
 }

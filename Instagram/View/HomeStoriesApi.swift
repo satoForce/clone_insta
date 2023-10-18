@@ -14,10 +14,7 @@ struct HomeStoriesApi: View {
     var imageSize: CGFloat = 60
     var lineWidth: CGFloat = 2.5
     var overlayColors: [Color] = [ .blue, .purple, .red, .pink, .yellow, .orange]
-    
-//    public init(characters:[Characters]) {
-//      self.characters = characters
-//    }
+    //let maxLength: Int = 20
     
     var body: some View {
         VStack {
@@ -39,7 +36,7 @@ struct HomeStoriesApi: View {
           )
           .frame(width: imageSize + 10, height: imageSize + 10)
           
-            Text(characters.name)
+            Text(characters.name.prefix(12) + (characters.name.count > 12 ? "..." : ""))
             .font(.caption)
         }
     }
@@ -47,6 +44,6 @@ struct HomeStoriesApi: View {
 
 struct HomeStoriesApi_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStoriesApi(characters: Characters(id: 1, name: "Jerry Smith", image: "https://rickandmortyapi.com/api/character/avatar/5.jpeg"))
+        HomeStoriesApi(characters: Characters(id: 1, name: "Jerry SmithJerry Smith", image: "https://rickandmortyapi.com/api/character/avatar/5.jpeg"))
     }
 }
