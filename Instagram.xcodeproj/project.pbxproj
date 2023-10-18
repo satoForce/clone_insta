@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42F37D82ADC933B001B36F7 /* StoryViewDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F37D72ADC933B001B36F7 /* StoryViewDataApi.swift */; };
+		F42F37DA2ADCB820001B36F7 /* HomeStoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F37D92ADCB820001B36F7 /* HomeStoriesApi.swift */; };
 		F46226B72AC707CB00DDFACE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226B62AC707CB00DDFACE /* Post.swift */; };
 		F46226BA2AC7084700DDFACE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226B92AC7084700DDFACE /* Data.swift */; };
 		F46226BC2AC7088000DDFACE /* PostGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46226BB2AC7088000DDFACE /* PostGrid.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F42F37D72ADC933B001B36F7 /* StoryViewDataApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewDataApi.swift; sourceTree = "<group>"; };
+		F42F37D92ADCB820001B36F7 /* HomeStoriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoriesApi.swift; sourceTree = "<group>"; };
 		F46226B62AC707CB00DDFACE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F46226B92AC7084700DDFACE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F46226BB2AC7088000DDFACE /* PostGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGrid.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F8B7902ABC7A3600636F77 /* StoryView.swift */,
+				F42F37D92ADCB820001B36F7 /* HomeStoriesApi.swift */,
 				F489DD1A2AB2ACA30014A77D /* Post2.swift */,
 				F4F8B7922ABC7BFB00636F77 /* HomeStories.swift */,
 				F489DD162AB2A8C60014A77D /* Header.swift */,
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F8B78E2ABC79B300636F77 /* StoryViewData.swift */,
+				F42F37D72ADC933B001B36F7 /* StoryViewDataApi.swift */,
 				F4AB22682AC302FD00CA957F /* User.swift */,
 				F46226B62AC707CB00DDFACE /* Post.swift */,
 			);
@@ -319,6 +325,7 @@
 				F489DD1B2AB2ACA30014A77D /* Post2.swift in Sources */,
 				F489DD172AB2A8C60014A77D /* Header.swift in Sources */,
 				F4F8B7932ABC7BFB00636F77 /* HomeStories.swift in Sources */,
+				F42F37DA2ADCB820001B36F7 /* HomeStoriesApi.swift in Sources */,
 				F46226B72AC707CB00DDFACE /* Post.swift in Sources */,
 				F489DCEA2AB2A2F20014A77D /* ContentView.swift in Sources */,
 				F489DD152AB2A7F40014A77D /* TabB.swift in Sources */,
@@ -327,6 +334,7 @@
 				F4F8B7912ABC7A3600636F77 /* StoryView.swift in Sources */,
 				F4AB226B2AC3030C00CA957F /* ProfileHeader.swift in Sources */,
 				F46226BC2AC7088000DDFACE /* PostGrid.swift in Sources */,
+				F42F37D82ADC933B001B36F7 /* StoryViewDataApi.swift in Sources */,
 				F4AB22692AC302FD00CA957F /* User.swift in Sources */,
 				F4F8B78F2ABC79B300636F77 /* StoryViewData.swift in Sources */,
 			);
