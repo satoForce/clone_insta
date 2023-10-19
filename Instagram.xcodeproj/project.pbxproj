@@ -177,13 +177,13 @@
 			children = (
 				F489DCE92AB2A2F20014A77D /* ContentView.swift */,
 				F463A3822AE08AB700ED4B37 /* ProfileView.swift */,
+				F4AB226A2AC3030C00CA957F /* ProfileHeader.swift */,
 				F4F8B7902ABC7A3600636F77 /* StoryView.swift */,
 				F4F8B7922ABC7BFB00636F77 /* HomeStories.swift */,
 				F42F37D92ADCB820001B36F7 /* HomeStoriesApi.swift */,
 				F42F37DF2AE03A75001B36F7 /* HomeStoriesCApi.swift */,
 				F489DD1A2AB2ACA30014A77D /* Post2.swift */,
 				F489DD162AB2A8C60014A77D /* Header.swift */,
-				F4AB226A2AC3030C00CA957F /* ProfileHeader.swift */,
 				F46226BB2AC7088000DDFACE /* PostGrid.swift */,
 				F463A3842AE08BD300ED4B37 /* PostGridApi.swift */,
 			);
