@@ -27,6 +27,7 @@
 		F4AB226B2AC3030C00CA957F /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB226A2AC3030C00CA957F /* ProfileHeaderView.swift */; };
 		F4BD35AA2AE2D6280066DC66 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD35A92AE2D6280066DC66 /* ViewModel.swift */; };
 		F4BD35AC2AE2D9FA0066DC66 /* PostScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD35AB2AE2D9FA0066DC66 /* PostScroll.swift */; };
+		F4BD35B92AE31ED30066DC66 /* SearchNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD35B82AE31ED30066DC66 /* SearchNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F4AB226A2AC3030C00CA957F /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		F4BD35A92AE2D6280066DC66 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F4BD35AB2AE2D9FA0066DC66 /* PostScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScroll.swift; sourceTree = "<group>"; };
+		F4BD35B82AE31ED30066DC66 /* SearchNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,8 @@
 			children = (
 				F489DCE72AB2A2F20014A77D /* InstagramApp.swift */,
 				F489DD142AB2A7F40014A77D /* ContentView.swift */,
-				F4AB22672AC3027300CA957F /* Model */,
+				F4BD35B12AE2EE340066DC66 /* Model */,
+				F4AB22672AC3027300CA957F /* ViewModel */,
 				F4AB22652AC3022100CA957F /* View */,
 				F489DCEB2AB2A2F40014A77D /* Assets.xcassets */,
 				F489DCED2AB2A2F40014A77D /* Instagram.entitlements */,
@@ -160,6 +163,7 @@
 		F4AB22652AC3022100CA957F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4BD35AF2AE2EE100066DC66 /* SearchView */,
 				F4BD35A82AE2C9190066DC66 /* HomeView */,
 				F4BD35A72AE2C8E30066DC66 /* ProfileView */,
 				F463A3842AE08BD300ED4B37 /* Grid.swift */,
@@ -168,12 +172,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F4AB22672AC3027300CA957F /* Model */ = {
+		F4AB22672AC3027300CA957F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				F4BD35A92AE2D6280066DC66 /* ViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F4BD35A72AE2C8E30066DC66 /* ProfileView */ = {
@@ -198,6 +202,21 @@
 				F4BD35AB2AE2D9FA0066DC66 /* PostScroll.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F4BD35AF2AE2EE100066DC66 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD35B82AE31ED30066DC66 /* SearchNumber.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		F4BD35B12AE2EE340066DC66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +352,7 @@
 				F4BD35AC2AE2D9FA0066DC66 /* PostScroll.swift in Sources */,
 				F489DD1B2AB2ACA30014A77D /* PostView.swift in Sources */,
 				F489DD172AB2A8C60014A77D /* HomeHeaderView.swift in Sources */,
+				F4BD35B92AE31ED30066DC66 /* SearchNumber.swift in Sources */,
 				F42F37DA2ADCB820001B36F7 /* HomeStory.swift in Sources */,
 				F463A3852AE08BD300ED4B37 /* Grid.swift in Sources */,
 				F489DCEA2AB2A2F20014A77D /* HomeView.swift in Sources */,

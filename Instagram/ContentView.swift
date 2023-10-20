@@ -22,7 +22,7 @@ struct ContentView: View {
                     Label("", systemImage: "magnifyingglass")
             }
             
-            Text("agregar")
+            SearchNumber()
                 .tabItem {
                     Label("", systemImage: "display")
             }
