@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeStoriesApi: View {
     
-    @Binding var characters: Characters
+    @State var characters: Characters
     
     var imageSize: CGFloat = 60
     var lineWidth: CGFloat = 2.5

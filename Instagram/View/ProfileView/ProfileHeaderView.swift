@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     
-    @Binding var characters: Characters
+    @State var characters: Characters
     
     var body: some View {
         HStack {
