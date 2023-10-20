@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeStoriesView: View {
     
-    @State private var characters: [Characters] = [Characters]()
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
         
@@ -17,30 +17,16 @@ struct HomeStoriesView: View {
             
             LazyHStack(spacing: 16) {
                 
-                ForEach($characters) { character in
-                    HomeStoriesApi(characters:character)
+                ForEach(viewModel.characters) { character in
+                    HomeStoriesApi(characters: character)
                 }
             }
             .padding(.horizontal, 8)
         }
         .padding()
         .onAppear {
-            loadData()
+            viewModel.loadData()
         }
-    }
-    
-    private func loadData() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            if let decodedData = try? JSONDecoder().decode(APIData.self, from: data) {
-                DispatchQueue.main.async {
-                    self.characters = decodedData.results
-                }
-            }
-        }.resume()
     }
 }
 
