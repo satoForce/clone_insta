@@ -16,3 +16,10 @@ struct Post: Identifiable {
     let hasLiked: Bool = false
     let hasBookmarked: Bool = false
 }
+
+struct User: Identifiable {
+    
+    var id = UUID()
+    var userName: String
+    var userImage: String
+}

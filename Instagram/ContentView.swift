@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TabB.swift
 //  Instagram
 //
 //  Created by ROCIO CHAN on 13/09/23.
@@ -7,35 +7,40 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
     
-    
     var body: some View {
-        VStack(alignment: .leading) {
+        TabView{
             
-            Header()
+            HomeView()
+                .tabItem {
+                    Label("", systemImage: "house")
+            }
             
+            SearchView()
+                .tabItem {
+                    Label("", systemImage: "magnifyingglass")
+            }
             
-            ScrollView {
-                VStack(alignment: .leading) {
-                    HomeStoriesApi()
-                    Divider()
-                   
-                    ForEach(Data().posts) {
-                        Post2(post: $0)
-                    }
-                }
-                
-                TabB()
+            Text("agregar")
+                .tabItem {
+                    Label("", systemImage: "display")
+            }
+            
+            Text("reels")
+                .tabItem {
+                    Label("", systemImage: "bag")
+            }
+            
+            ProfileView()
+                .tabItem {
+                    Label("", systemImage: "circle")
             }
         }
-        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TabB_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

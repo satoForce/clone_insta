@@ -7,18 +7,23 @@
 
 import SwiftUI
 
-struct ProfileHeader: View {
+struct ProfileHeaderView: View {
     
-    var user: User
+    @Binding var characters: Characters
     
     var body: some View {
         HStack {
-            Image(user.userImage)
-                .resizable()
-                .frame(width: 120, height: 120, alignment: .center)
-                .cornerRadius(60)
-                .clipped()
-                .padding()
+            AsyncImage(url: URL(string:characters.image), content: { image in
+                image
+                    .resizable()
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .cornerRadius(60)
+                    .clipped()
+                    
+            }, placeholder: {
+                ProgressView()
+            })
+                
             Spacer()
             
             VStack {
@@ -48,8 +53,8 @@ struct ProfileHeader: View {
     }
 }
 
-struct Profile_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeader(user: User(userName: "Manny", userImage: "perro1"))
-    }
-}
+//struct Profile_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileHeader(characters: Characters(id: 1, name: "Jerry SmithJerry Smith", image: "https://rickandmortyapi.com/api/character/avatar/5.jpeg"))
+//    }
+//}

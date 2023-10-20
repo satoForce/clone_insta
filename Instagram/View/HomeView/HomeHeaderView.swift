@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Header: View {
+struct HomeHeaderView: View {
     var body: some View {
         HStack {
           Image("logo")
             .resizable()
-            .frame(width: 100, height: 48)
+            .frame(width: 120, height: 70)
             .aspectRatio(contentMode: .fit)
           
           Spacer()
@@ -30,6 +30,6 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header()
+        HomeHeaderView()
     }
 }

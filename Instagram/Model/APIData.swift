@@ -11,9 +11,11 @@ struct APIData: Decodable {
     let results: [Characters]
 }
 
-struct Characters: Decodable {
+struct Characters: Decodable, Identifiable {
+    let id: Int
     let name: String
     let image: String
 }
+
 
 
